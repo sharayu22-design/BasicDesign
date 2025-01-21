@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet " href="website.css">
+    
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <!-- Layout -->
+    <div class="container">
+        <!-- Left Menu -->
+        <div class="left-menu" id="leftMenu">
+            <button onclick="toggleMenu()">Toggle Menu</button>
+            <ul id="userList">
+                <li>User 1</li>
+                <li>User 2</li>
+                <li>User 3</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Main Content Area</h2>
+            <p>This is the area for the main content.</p>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <h2>Right Panel</h2>
+            <p>This is the right panel.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Footer Content</p>
+    </div>
+
+    <!-- JavaScript for Menu Toggle and Responsiveness -->
+    <script>
+        // Function to toggle the left menu
+        function toggleMenu() {
+            const menu = document.getElementById('userList');
+            menu.classList.toggle('collapse-menu');
+        }
+
+        // Resize functionality for responsiveness
+        window.addEventListener('resize', function() {
+            const width = window.innerWidth;
+
+            if (width >= 992 && width <= 1600) {
+                document.body.style.transform = 'scale(0.9)';
+            } else if (width >= 700 && width <= 767) {
+                document.body.style.transform = 'scale(0.8)';
+            } else if (width >= 600 && width <= 700) {
+                document.body.style.transform = 'scale(0.75)';
+            } else if (width <= 600) {
+                document.body.style.transform = 'scale(0.5)';
+            } else {
+                document.body.style.transform = 'scale(1)';
+            }
+        });
+    </script>
+
+</body>
+</html>
